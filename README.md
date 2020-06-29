@@ -23,6 +23,7 @@ The final application should be hosted on a publicly accessible URL.  You should
 
 
 
+
 -> While reading given requirement of end points I decide to use spring boot. The reason spring Boot is easy create stand-alone application. 
    To store the data into system I used JPA api. It helped me to directly deal with entities.
    The most important part of the application was while developing is to store the OTP in cache and for this I found that google gives an API to store into cache. 
@@ -65,3 +66,40 @@ Insert dummy user data into table
 
 `insert into tab_users (id, contact_number, email, password, username) values (nextval('tab_users_id_seq'), '1234', 'abcd@gmail.com', 'pass', 'sahil.soni');`
 
+
+
+
+#####**Steps to run the Application:** 
+
+1. How to direct run the application: 
+   -> Go to the '**AppStarter**' class which contains the main method (This class is the main class and this is where the application starts to run) in the '**com.example.utils**' package.
+   -> Run the application.
+  
+
+OR
+
+
+2. How to run the application from Terminal/Command Prompt:
+   -> Directory:> **mvn clean**
+   
+   Tha above command will clean the previous output of the application by deleting the build directory.
+   
+   -> Directory:> **mvn install**
+   
+   The above command will install the necessary dependencies and libraries for maven.
+   
+   -> Directory:> **mvn spring-boot:run**
+   
+   The above command will run the application and start the tomcat server on your local system.
+   
+   
+
+After executing one of the two ways above, Now go to the web browser:
+
+-> Type '**localhost:8080/login**' in the url. This is the first page of our application
+-> The above page will ask you for email(refer to the **NOTE****)
+
+
+
+**NOTE****: If you want to run the application, you need to manually store the email id in the database you are using (Also need to change the properties in '**application.properties**' file in resources according to your database properties).
+        The application will send otp only if the email matches with the email in the database (I have added some non working dummy data in the database for example.)
